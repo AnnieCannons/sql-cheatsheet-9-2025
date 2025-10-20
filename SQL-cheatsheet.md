@@ -106,7 +106,6 @@ SELECT *
 FROM 'created-table'
 ORDER BY DESC 'top-rated-movies'
 LIMIT 10;
-
 ```
 
 ### 10. `ON CONFLICT` — assigned to **\_**
