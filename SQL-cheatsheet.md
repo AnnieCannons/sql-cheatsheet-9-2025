@@ -139,12 +139,15 @@ ON owners.owner_id = pets.owner_id;
 
 ### 9. `LIMIT` — assigned to Xavier
 
-**Description:**
+**Description:** `LIMIT` is a feature that makes sure there is specific amount of data in the _view_ of the schema in SQL when writing a query. This is done by using the `LIMIT` feature at the end of the query before the semi-colon which triggers a limit.
 
 **Example:**
 
 ```sql
-
+SELECT *
+FROM 'created-table'
+ORDER BY DESC 'specific-column-value-chosen'
+LIMIT 10;
 ```
 
 ### 10. `ON CONFLICT` — assigned to **\_**
