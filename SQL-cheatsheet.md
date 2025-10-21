@@ -104,7 +104,7 @@ CREATE TABLE friends (
 ```sql
 SELECT *
 FROM 'created-table'
-ORDER BY DESC 'top-rated-movies'
+ORDER BY DESC 'specific-column-value-chosen'
 LIMIT 10;
 ```
 
