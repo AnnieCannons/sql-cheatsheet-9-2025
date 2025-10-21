@@ -38,61 +38,103 @@ CREATE TABLE friends (
 ### 3. `INSERT INTO` — assigned to Deja
 
 **Description:**
+`INSERT INTO`is used to add a new record or row to a table.
 
-**Example:**
+**Examples:**
+The first table inserts data into columns in order:
 
 ```sql
+INSERT INTO friends
+VALUES ('Deja', 19982501);
+VALUES ('Diamond', 19960405)
+```
 
+The next table inserts data into columns by name:
+
+```sql
+INSERT INTO friends (name, birthday)
+VALUES ('Deja', 19982501);
+VALUES ('Diamond', 19960405)
 ```
 
 ### 4. `UPDATE` — assigned to Rucha
 
-**Description:**
+**Description:** `UPDATE` allows you to update data in one or more columns of one or more rows in a table. In this syntax:
+we first, specify the name of the table that we want to update data after the UPDATE keyword.
+Second, we specify columns and their new values after SET keyword. The columns that do not appear in the SET clause retain their original values.
+Third, we determine which rows to update in the condition of the WHERE clause.
+The WHERE clause is optional. If we omit the WHERE clause, the UPDATE statement will update all rows in the table.
+Courtsey : [Neon documentation](https://neon.com/postgresql/postgresql-tutorial/postgresql-update).
 
 **Example:**
 
 ```sql
-
+UPDATE movies
+SET genre = 'thriller'
+WHERE movie_name = 'The Prestige'
+AND year = 2006;
 ```
 
 ### 5. `DELETE FROM` — assigned to Lajoie
 
-**Description:**
+**Description**
+The `DELETE FROM` removes rows from a table. It's also important to note that a `WHERE` clause can be used to specify which rows to delete. If you omit `WHERE`, all rows in the table will be deleted.
 
 **Example:**
 
-```sql
+-- Below deletes a single movie by its primary key
 
+```sql
+SELECT *
+DELETE FROM movies
+WHERE movie_id = 42;
 ```
 
 ### 6. `GROUP BY` — assigned to Rachel
 
 **Description:**
 
+`GROUP BY` is used to organize rows that have the same values in one or more columns into groups. It’s most often used with aggregate functions like COUNT(), SUM(), AVG(), MIN(), or MAX()
+
 **Example:**
 
 ```sql
-
+SELECT
+  director,
+  COUNT(*)
+FROM
+  movies
+GROUP BY
+  director;
 ```
 
 ### 7. `ORDER BY` — assigned to Tamara
 
-**Description:**
+**Description:** Using the `ORDER BY` clause to return the `Price` column and using `ASC` to list prices in ascending order, from lowest to highest. `DESC` can also be used to list prices in descending order, from highest to lowest.
 
 **Example:**
 
 ```sql
+SELECT * FROM Products
+ORDER BY Price ASC;
 
+or
+
+ORDER BY Price DESC;
 ```
 
 ### 8. `INNER JOIN` — assigned to Nicole
 
-**Description:**
+**Description:** `INNER JOIN` returns only rows that match on the ON condition in two tables.
+
+(The overlapping circles in the middle of the Venn diagram)
 
 **Example:**
 
 ```sql
-
+SELECT *
+FROM owners INNER JOIN pets
+ON owners.owner_id = pets.owner_id;
 ```
 
 ### 9. `LIMIT` — assigned to Xavier
