@@ -98,12 +98,17 @@ GROUP BY
 
 ### 7. `ORDER BY` — assigned to Tamara
 
-**Description:**
+**Description:** Using the `ORDER BY` clause to return the `Price` column and using `ASC` to list prices in ascending order, from lowest to highest. `DESC` can also be used to list prices in descending order, from highest to lowest.
 
 **Example:**
 
 ```sql
+SELECT * FROM Products
+ORDER BY Price ASC;
 
+or
+
+ORDER BY Price DESC;
 ```
 
 ### 8. `INNER JOIN` — assigned to Nicole
